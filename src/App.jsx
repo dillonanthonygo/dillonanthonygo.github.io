@@ -1,14 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react"
+import "./App.css"
+import { LoadingScreen } from "./components/LoadingScreen"
+import "./index.css"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isLoaded, setisLoaded] = useState(false)
 
   return (
-    <></>
-  )
+    <>
+      {!isLoaded && <LoadingScreen onComplete={() => setisLoaded(true)}/>}
+    </>
+  );
 }
 
 export default App
