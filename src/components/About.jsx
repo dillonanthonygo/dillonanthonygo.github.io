@@ -1,25 +1,67 @@
+const frontendSkills = ["React", "JavaScript", "HTML & CSS", "Tailwind CSS", "Vite"];
+const otherSkills = ["Git", "GitHub", "REST APIs", "Agile"];
+
 export const About = () => {
+  return (
+    <section
+      id="about"
+      className="flex min-h-screen scroll-mt-20 items-center justify-center py-24"
+    >
+      <div className="mx-auto w-full max-w-3xl px-4">
+        <h2 className="mb-10 text-center text-3xl font-bold bg-gradient-to-r from-slate-800 to-blue-600 bg-clip-text text-transparent">
+          About Me
+        </h2>
 
-    return <section id="about" className="min-h-screen flex items-center justify-center py-24 scroll-mt-20">
-        <div className="max-w-3xl mx-auto px-4 w-full">
-            <h2 className="text-3xl font-bold mb-10 bg-gradient-to-r from-slate-800 to-blue-600 bg-clip-text text-transparent text-center">
-                About Me
-            </h2>
-            <div className="rounded-2xl border border-slate-200/90 bg-white/80 p-8 shadow-lg shadow-slate-200/60 backdrop-blur-sm transition-all hover:border-slate-300">
-                <p className="text-slate-600 mb-6 leading-relaxed">
-                    Something about yourself...
-                </p>
-
-            </div>
-            <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="rounded-2xl border border-slate-200/90 bg-white/70 p-6 shadow-md shadow-slate-200/40 backdrop-blur-sm transition-all hover:border-blue-200">
-                    <h3 className="text-xl font-bold mb-4 text-slate-800"> Frontend Skills </h3>
-                    <div className="flex flex-wrap gap-2">
-
-                    </div>
-
-                </div>
-            </div>
+        {/* Intro — single readable block */}
+        <div className="mb-8 rounded-2xl border border-slate-200/90 bg-white/85 p-7 shadow-md shadow-slate-200/50 backdrop-blur-sm sm:p-8">
+          <p className="text-[15px] leading-relaxed text-slate-700 sm:text-base">
+            I&apos;m a recent graduate from the{" "}
+            <span className="font-medium text-slate-800">University of California, Los Angeles</span>{" "}
+            Master&apos;s program, focused on building reliable, user-friendly software. I enjoy
+            turning ideas into clean interfaces and well-structured code.
+          </p>
+          <p className="mt-4 text-sm leading-relaxed text-slate-500">
+            I&apos;m actively looking for a{" "}
+            <span className="text-slate-600">Software Engineering</span> role where I can learn from
+            a strong team and contribute to products people use every day.
+          </p>
         </div>
+
+        {/* Skills — compact pills in two small panels */}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
+          <div className="rounded-xl border border-slate-200/90 bg-white/70 p-4 shadow-sm backdrop-blur-sm sm:p-5">
+            <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-500">
+              Frontend
+            </h3>
+            <div className="flex flex-wrap gap-1.5">
+              {frontendSkills.map((skill) => (
+                <span
+                  key={skill}
+                  className="inline-flex items-center rounded-md border border-slate-200 bg-slate-50/90 px-2 py-0.5 text-[11px] font-medium text-slate-700 shadow-[0_1px_0_rgba(15,23,42,0.04)] sm:text-xs"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-xl border border-slate-200/90 bg-white/70 p-4 shadow-sm backdrop-blur-sm sm:p-5">
+            <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-500">
+              Tools & more
+            </h3>
+            <div className="flex flex-wrap gap-1.5">
+              {otherSkills.map((skill) => (
+                <span
+                  key={skill}
+                  className="inline-flex items-center rounded-md border border-slate-200 bg-slate-50/90 px-2 py-0.5 text-[11px] font-medium text-slate-700 shadow-[0_1px_0_rgba(15,23,42,0.04)] sm:text-xs"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+  );
 };
