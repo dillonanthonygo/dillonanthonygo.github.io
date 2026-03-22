@@ -7,23 +7,21 @@ export const Navbar = ({menuOpen, setMenuOpen}) => {
     }, [menuOpen]);
 
     return (
-        <nav className="fixed top-0 w-full z-40 bg-[rgba(255,219,220,.8)] backdrop-blue-lg border-b border-black/10 shadow-lg">
-            <div className="max-2-5xl mx-auto px-4">
-                <div className="flex justify-between items-center h-16">
-                    <a href="#home" className="font-mono text-xl font-bold text-black"> logo </a>
-                
+        <nav className="fixed top-0 z-40 w-full border-b border-slate-200/90 bg-white/80 shadow-sm shadow-slate-200/50 backdrop-blur-md">
+            <div className="mx-auto flex h-16 w-full max-w-none items-center justify-between px-4 sm:px-6 lg:px-10 xl:px-14">
+                <a href="#home" className="font-mono text-xl font-bold tracking-tight text-slate-800 transition-colors hover:text-blue-600 shrink-0"> DG </a>
+
                 {/* Mobile */}
-                <div className="w-7 h-5 relative cursor-pointer z-40 md:hidden" onClick={() => setMenuOpen((prev) => !prev)}>
+                <div className="relative z-40 flex h-5 w-7 shrink-0 cursor-pointer items-center justify-end text-slate-600 transition-colors hover:text-blue-600 md:hidden" onClick={() => setMenuOpen((prev) => !prev)} aria-label="Open menu">
                     &#9776;
                 </div>
 
-                {/* Desktop */}
-                <div className="hidden md:flex items-center space-x-8">
-                    <a href="#home" className="text-black-300 hove:text-black transtion-colors"> Home </a>
-                    <a href="#about" className="text-black-300 hove:text-black transtion-colors"> About </a>
-                    <a href="#projects" className="text-black-300 hove:text-black transtion-colors"> Projects </a>
-                    <a href="#contact" className="text-black-300 hove:text-black transtion-colors"> Contact </a>
-                </div>
+                {/* Desktop — sits at the right edge of the full-width banner */}
+                <div className="hidden md:flex items-center gap-8 lg:gap-10">
+                    <a href="#home" className="text-sm font-medium text-slate-600 transition-colors hover:text-blue-600"> Home </a>
+                    <a href="#about" className="text-sm font-medium text-slate-600 transition-colors hover:text-blue-600"> About </a>
+                    <a href="#projects" className="text-sm font-medium text-slate-600 transition-colors hover:text-blue-600"> Projects </a>
+                    <a href="#contact" className="text-sm font-medium text-slate-600 transition-colors hover:text-blue-600"> Contact </a>
                 </div>
             </div>
         </nav>
